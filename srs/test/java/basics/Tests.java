@@ -2,29 +2,24 @@ package basics;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 import static org.junit.Assert.assertEquals;
 
-public class LoginTests {
-    private By coursesButton = By.id("btnMyCoursesList");
-    private By courseName = By.id("lnkListCourseSelcted");
-    private By search = By.id("txtCourseSearch");
-    private By searchButton = By.id("btnCourseSearch");
+public class Tests {
+    private final By coursesButton = By.id("btnMyCoursesList");
+    private final By courseName = By.id("lnkListCourseSelcted");
+    private final By search = By.id("txtCourseSearch");
+    private final By searchButton = By.id("btnCourseSearch");
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
-    public LoginTests(WebDriver driver) {
+    public Tests(WebDriver driver) {
 
         this.driver = driver;
     }
      @Test
     public void testaddcourse(){
-   }
-        public LoginPage CoursesButton() {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -45,7 +40,4 @@ public class LoginTests {
             }
             String contents = driver.findElement(courseName).getAttribute("innerHTML");
             assertEquals (contents, "math");
-
-            return null;
-        }
-}
+    }}
